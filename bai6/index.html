@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>type</title>
+</head>
+<body>
+    <h1>Tổng của
+        <input id="number" type="text">
+        số tự nhiên đầu tiên chia hết cho 7 là: "enter please!"
+    </h1>
+    <p id="result" style="font-size: 60px"></p>
+
+    <script>
+        function result() {
+            let total = 0;
+            let number = parseInt(document.getElementById("number").value);
+            if (isNaN(number) === true) {
+                alert("số bạn nhập không hợp lệ!")
+                location.reload();
+            } else {
+                for (let i = 7; (i / 7) <= number; i += 7) {
+                    total += i
+                }
+                document.getElementById("result").innerHTML = total;
+            }
+        }
+        function enter(key) {
+            if (key.keyCode === 13) {
+                result();
+            }
+        }
+        window.addEventListener("keydown", enter);
+    </script>
+</body>
+</html>

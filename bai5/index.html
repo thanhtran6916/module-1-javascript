@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <p id="result"></p>
+    <script>
+
+      function fibonacci() {
+        let a = 0;
+        let b = 1;
+        let c;
+        let total = 0;
+        for (let i = 0; i < 20; i++) {
+          c = a;
+          a = a + b;
+          b = c;
+          total += c
+        }
+        document.getElementById("result").innerHTML = total;
+      }
+      fibonacci();
+    </script>
+</body>
+</html>
