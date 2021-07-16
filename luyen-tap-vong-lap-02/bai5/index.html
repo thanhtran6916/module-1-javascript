@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính lãi ngân hàng</title>
+</head>
+<body>
+    <form action="">
+        <input id="input-monney" type="text"><span>Số tiền vay</span><br>
+        <input id="input-month" type="text"><span>Số tháng vay</span><br>
+        <input id="interest-rate" type="text"><span>Lãi xuất hàng tháng</span><br>
+        <button type="button" onclick="result()">Tính</button>
+        <p id="result">Kết quả: </p>
+    </form>
+
+    <script>
+        function result() {
+          let money = parseFloat(document.getElementById("input-monney").value, 3);
+          let month = parseFloat(document.getElementById("input-month").value, 1);
+          let rate = parseFloat(document.getElementById("interest-rate").value, 3);
+          let count = 0;
+          console.log(rate);
+          for (count; count < month; count++) {
+            money += money * rate;
+          }
+          console.log(money);
+          document.getElementById("result").innerHTML += parseFloat(money, 2) + "VND";
+        }
+
+
+    </script>
+</body>
+</html>
